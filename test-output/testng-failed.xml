@@ -5,8 +5,7 @@
     <classes>
       <class name="com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez">
         <methods>
-          <include name="ClicandoEmCarteiraSemEstarLogado"/>
-          <include name="AbrindoAplicativoEPassandoTutorial"/>
+          <include name="LogandoComLoginUolet"/>
           <include name="Setup"/>
         </methods>
       </class> <!-- com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez -->
