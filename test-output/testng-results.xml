@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69444" started-at="2017-03-03T20:33:09Z" finished-at="2017-03-03T20:34:18Z">
+  <suite name="Default suite" duration-ms="74514" started-at="2017-03-06T18:13:58Z" finished-at="2017-03-06T18:15:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69444" started-at="2017-03-03T20:33:09Z" finished-at="2017-03-03T20:34:18Z">
+    <test name="Default test" duration-ms="74514" started-at="2017-03-06T18:13:58Z" finished-at="2017-03-06T18:15:12Z">
       <class name="com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez">
-        <test-method status="PASS" signature="Setup()[pri:0, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="Setup" is-config="true" duration-ms="24504" started-at="2017-03-03T17:33:09Z" finished-at="2017-03-03T17:33:33Z">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="Setup" is-config="true" duration-ms="27681" started-at="2017-03-06T15:13:58Z" finished-at="2017-03-06T15:14:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method status="PASS" signature="AbrindoAplicativoEPassandoTutorial()[pri:0, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="AbrindoAplicativoEPassandoTutorial" duration-ms="10812" started-at="2017-03-03T17:33:33Z" description="Abrindo aplicativo pela primeira vez e passando o tutorial" finished-at="2017-03-03T17:33:44Z">
+        <test-method status="PASS" signature="AbrindoAplicativoEPassandoTutorial()[pri:0, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="AbrindoAplicativoEPassandoTutorial" duration-ms="10429" started-at="2017-03-06T15:14:26Z" description="Abrindo aplicativo pela primeira vez e passando o tutorial" finished-at="2017-03-06T15:14:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AbrindoAplicativoEPassandoTutorial -->
-        <test-method status="PASS" signature="ClicandoEmCarteiraSemEstarLogado()[pri:1, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="ClicandoEmCarteiraSemEstarLogado" duration-ms="5072" started-at="2017-03-03T17:33:44Z" description="Abrindo Menu" finished-at="2017-03-03T17:33:49Z">
+        <test-method status="PASS" signature="ClicandoEmCarteiraSemEstarLogado()[pri:1, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="ClicandoEmCarteiraSemEstarLogado" duration-ms="5120" started-at="2017-03-06T15:14:36Z" description="Abrindo Menu" finished-at="2017-03-06T15:14:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClicandoEmCarteiraSemEstarLogado -->
-        <test-method status="PASS" signature="LogandoComLoginUolet()[pri:2, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="LogandoComLoginUolet" duration-ms="28994" started-at="2017-03-03T17:33:49Z" description="uolet" finished-at="2017-03-03T17:34:18Z">
+        <test-method status="PASS" signature="LogandoComLoginUolet()[pri:2, instance:com.uolet.casos.teste.mobileApp.AbrindoAppPelaPrimeiraVez@60c6f5b]" name="LogandoComLoginUolet" duration-ms="31216" started-at="2017-03-06T15:14:41Z" description="uolet" finished-at="2017-03-06T15:15:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogandoComLoginUolet -->

@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,6 +16,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -25,7 +27,7 @@ public class AbrindoAppPelaPrimeiraVez {
 	@BeforeClass
 	public void Setup() throws MalformedURLException, InterruptedException {
 		//File diretorioAplicacao = new File("/home/viniciusqa/workspace/apk_uolet/");
-		//File arquivoAplicacao = new File(diretorioAplicacao , "com.uolet.app.real3.apk"); /*Definindo um endereço fisico do APK para instalação no android*/
+		//File arquivoAplicacao = new File(diretorioAplicacao , "com.uolet.app.real4.apk"); /*Definindo um endereço fisico do APK para instalação no android*/
 		  
 		/*Criando e setando as capacidades do driver*/
 		DesiredCapabilities cap = new DesiredCapabilities();
@@ -34,10 +36,10 @@ public class AbrindoAppPelaPrimeiraVez {
 		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 		
 		/*Setando meu device - Android Uolet*/
-		//cap.setCapability(MobileCapabilityType.DEVICE_NAME, "LGH342c0e8e752"); 
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "LGH342c0e8e752"); 
 		
 		/*Setando meu device - Meu Android*/
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "T099707JJF"); 
+		//cap.setCapability(MobileCapabilityType.DEVICE_NAME, "T099707JJF"); 
 		
 		/*Instalar o APK apartir de um endereço fisico*/
 		//cap.setCapability(MobileCapabilityType.APP, arquivoAplicacao.getAbsolutePath());
@@ -60,12 +62,21 @@ public class AbrindoAppPelaPrimeiraVez {
   @Test(priority =  0, description = "Abrindo aplicativo pela primeira vez e passando o tutorial")
   public void AbrindoAplicativoEPassandoTutorial() throws MalformedURLException, InterruptedException {	   
 		
-		driver.swipe(240, 400, 15, 400, 1500);		
-		Thread.sleep(3000);				
-		driver.swipe(240, 400, 15, 400, 1500);		
-		Thread.sleep(3000);
-		driver.tap(1, 350, 1130, 1);		
-		Thread.sleep(3000);		  
+		driver.swipe(240, 400, 15, 400, 1000);		
+		Thread.sleep(2000);				
+		driver.swipe(240, 400, 15, 400, 1000);		
+		Thread.sleep(2000);
+		/*Descobrindo o tamanho da tela*/
+		Dimension tamanhoTela = driver.manage().window().getSize();
+		int tamanhoAltura = tamanhoTela.getHeight();
+		int tamanhoLargura = tamanhoTela.getWidth();
+		System.out.print("Tamanho altura: " + (tamanhoAltura-10) + " e largura: " + tamanhoLargura/2);
+		/*evento de toque no aplicativo*/
+		//TouchAction acao = new TouchAction(driver);	
+		//acao.longPress(tamanhoLargura / 2,  tamanhoAltura - 10).perform();			
+		//driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='4']/android.widget.Button[@index='0']").click();
+		driver.tap(1, tamanhoLargura / 2 , tamanhoAltura - 10, 1);
+		Thread.sleep(5000);
   }
   @Test(priority = 1, description = "Abrindo Menu")
   public void ClicandoEmCarteiraSemEstarLogado () throws InterruptedException{
