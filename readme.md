@@ -9,10 +9,9 @@ Os testes vão ser organizados em test cases com a IDE Eclipse, que serão execu
 ## Suite de teste
 ======
 
-#### TestCase 1
+#### TestCase 1 (completo)
 
 Abrindo aplicativo pela primeira vez
-
 
 * Aguardando aplicativo ser carregado
 * Passando tutorial e indo para tela home
@@ -21,4 +20,71 @@ Abrindo aplicativo pela primeira vez
 * Voltando a tela home agora estando logado
 * Clicando no botão QrCode, verificando se ele foi carregado e voltando a tela home.
 * Clicando no botão Mapa, verificando se ele foi carregado e voltando a tela home.
+###### Obs²: Testes de Leitura de QrCode e Testes de GeoLocalização serão feitos manualmente, pois são funcionalidades nativas do android e não são contempladas via Appium.
+
+
+#### TestCase 2 (em produção)
+
+Verificando Itens do Menu
+
+* Aguardando aplicativo ser carregado e logando com login Uolet
+* Clicando no Menu
+* Verificando se o nome do usuário Logado está sendo apresentado no menu.
+* Verificando se **Minha Uolet** vai para a tela carteira Uolet
+* Verificando se **Meus Interesses** vai para a tela meus interesses e se é possivel selecionar um e voltar a tela inicial
+* Verificando se **Convidar Amigos** abre as redes sociais do celular
+* Verificando se **Ver tutorial** abre o tutorial
+* Verificando se **Fale conosco** abre as configurações do Email do usuario
+* Verificando se **Termos de Uso** abre os termos de uso do aplicativo Uolet
+* Verificando se **Política de privacidade** abre os termos de uso do aplicativo Uolet
+* Botão Sair efetua o Logout do sistema
+
+
+#### TestCase 3 (em produção)
+
+Verificando Campanha
+
+* Aguardando aplicativo ser carregado e logando com login Uolet
+* Arrastando campanha para a direita e esquerda para testar a funcionalidad de *Visualização da campanha*
+* Clicando em uma campanha
+* Arrastando os itens para direita e esquerda para testar a funcionalidade de *Visualização da campanha*
+* Verificando a ordem dos itens
+* Verificando as informações dos itens e fotos dele
+* Verificando se o link do item funciona e volta para o item
+* Verificando se o video do item funciona e volta para o item
+* Verificando se o item é coletado e exibe mensagem de coleta
+
+
+#### TestCase 4 (em produção)
+
+Verificando Carteira Uolet
+
+* Aguardando aplicativo ser carregado e logando com login Uolet
+* Clicando na carteira e verificando se ela foi carregada
+* Verificando se a carteira tem 3 abas, **Disponível**, **Resgatados** e **Vencidos**
+* Verificando se na aba **Disponível** está o item coletado no **TestCase 3**
+* Verificando se o item coletado é o mesmo item 
+* Verificando se ao arrastar o item para a esquerda é exibido o botão deletar
+* Verificando se o botão deletar realmente deleta o item
+* Verificando se um cupom pode ser resgatado
+
+
+#### TestCase 5 (em produção)
+
+Verificando Login
+
+* Aguardando aplicativo a ser carregado e indo para tela login
+* Logando via facebook usuário existente
+* Logando via facebook usuário inválido
+* Loganco via google usuário existente
+* Logando via google usuário inválido
+* Logando via Uolet usuário novo
+* Logando via Uolet usuário existente senha correta
+* Logando via Uolet usuário existente senha inválida
+
+
+
+
+
+
 	
