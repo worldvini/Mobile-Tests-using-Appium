@@ -1,9 +1,23 @@
+
+#Testes Mobile Uolet
+
+Utilizei para a criação do Script de testes do aplicativo [ UOLET ](https://uolet.com/) a IDE Eclipse utilizando a linguagem Java.
+Para gerar os vários casos de testes é possivel utilizar o JUnit ou o [ TestNG ](http://testng.org/doc/index.html), optei pelo TestNG.
+Para acessar as funcionalidades do **APP mobile** utilizei o Framework [ Appium ](http://appium.io/), enviando comandos do selenium com o java.
+O teste emgloba vários testes de comportamento e de aceitação visando a qualidade e garantindo que todas as funcionalidades estão se comportando corretamente.
+
+Necessário para que o teste funcione ter o SDK Android para usar a tools **ADB Devices** e o Appium instalado.
+No linux necessário adicionar as variaveis do ADB e do APPIUM no $PATH global.
+No windown a instalação é feita apartir de .exe e o PATH e adicionado altomaticamente. 
+Qualquer duvida ler documentação [ Appium - Documentação ](http://appium.io/documentation.html?lang=pt) .
+
+
 # Organização dos Testes aplicativo Uolet
 ======
 
-Os testes vão ser organizados em test cases com a IDE Eclipse, que serão executados pelo [ TestNg ](http://testng.org/doc/index.html) em uma ordem pré determinada.
+Os testes vão ser organizados em test cases com a IDE Eclipse, que serão executados pelo TestNG em uma ordem pré determinada.
 
-###### Obs: Em todos os casos de testes o driver do [ Appium ](http://appium.io/) **AndroidDriver** vão ser carregados no inicio da sua execução e finalizado antes de iniciar o próximo caso de teste.
+###### Obs: Em todos os casos de testes o driver **AndroidDriver** vai ter suas **SetCapability** configuradas no inicio da sua execução antes do **TestCase** iniciar e finalizado após os **TestCase** ter sido *completamente* executado.
 ======
 
 ## Suite de teste
