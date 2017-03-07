@@ -1,5 +1,7 @@
 package com.uolet.casos.teste.mobileApp;
 
+import static org.testng.Assert.fail;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,18 +14,24 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 
 public class AbrindoAppPelaPrimeiraVez {
-	AppiumDriver<WebElement> driver;
+	//AppiumDriver<WebElement> driver;
+	AndroidDriver<WebElement> driver;
+	WebDriverWait wait;
+	private StringBuffer verificationErrors = new StringBuffer();
+	
 	@BeforeClass
 	public void Setup() throws MalformedURLException, InterruptedException {
 		//File diretorioAplicacao = new File("/home/viniciusqa/workspace/apk_uolet/");
@@ -54,9 +62,18 @@ public class AbrindoAppPelaPrimeiraVez {
 		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 		
 		/*Criando a espera, e liberando somente quando o aplicativo estiver sido carregado e pronto para testes*/
-		WebDriverWait wait = new WebDriverWait(driver, 1000);
+		wait = new WebDriverWait(driver, 1000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View")));		
 		Thread.sleep(3000);				
+	}
+	
+	@AfterClass(alwaysRun = true)
+	public void tearDown() throws Exception {
+		driver.quit();
+	    String verificationErrorString = verificationErrors.toString();
+	    if (!"".equals(verificationErrorString)) {
+	    fail(verificationErrorString);
+	    }
 	}
 	
   @Test(priority =  0, description = "Abrindo aplicativo pela primeira vez e passando o tutorial")
@@ -70,25 +87,40 @@ public class AbrindoAppPelaPrimeiraVez {
 		Dimension tamanhoTela = driver.manage().window().getSize();
 		int tamanhoAltura = tamanhoTela.getHeight();
 		int tamanhoLargura = tamanhoTela.getWidth();
-		System.out.print("Tamanho altura: " + (tamanhoAltura-10) + " e largura: " + tamanhoLargura/2);
-		/*evento de toque no aplicativo*/
-		//TouchAction acao = new TouchAction(driver);	
-		//acao.longPress(tamanhoLargura / 2,  tamanhoAltura - 10).perform();			
-		//driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='4']/android.widget.Button[@index='0']").click();
+		/*Verificando se o Tamanho da altura e largura do elemento a ser clicado*/
+		System.out.print("Tamanho altura: " + (tamanhoAltura-10) + " e largura: " + tamanhoLargura/2);		
 		driver.tap(1, tamanhoLargura / 2 , tamanhoAltura - 10, 1);
 		Thread.sleep(5000);
   }
-  @Test(priority = 1, description = "Abrindo Menu")
+  @Test(priority = 1, description = "Clicando em carteira sem login")
   public void ClicandoEmCarteiraSemEstarLogado () throws InterruptedException{
 	  driver.findElementByXPath("//android.widget.ListView[@resource-id='list']/android.view.View[@index='1']").click();
 	  Thread.sleep(1500);
 	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='UOLET']")));
   }
-  @Test(priority = 2, description = "uolet")
+  @Test(priority = 2, description = "Efetuando login via UOLET contexto")
   public void LogandoComLoginUolet () throws InterruptedException{
 	  com.uolet.pageObjects.mobileApp.pageLogin logar = new com.uolet.pageObjects.mobileApp.pageLogin(driver);
 	  com.uolet.pageObjects.mobileApp.pageHome home = logar.LogandoUolet("rafa@ateste.com", "123456");
 	  Thread.sleep(10000);
+  }
+  @Test(priority = 3, description = "clicando em QRcode na pagina home")
+  public void ClicandoEmQRcodeVerificandoSeAbriuCarregouEVoltaPaginaHome () throws InterruptedException{
+	  driver.findElementByXPath("//android.widget.ListView[@resource-id='list']/android.view.View[@index='2']").click();
+	  wait = new WebDriverWait(driver, 1000);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@resource-id='com.uolet.app:id/status_view']")));
+	  Thread.sleep(1000);
+	  driver.pressKeyCode(AndroidKeyCode.BACK); 
+	  Thread.sleep(2000);
+  }
+  @Test(priority = 4, description = "clicando em Mapa na pagina home")
+  public void ClicandoEmMapaVerificandoSeAbriuCarregouEVoltaPaginaHome () throws InterruptedException{
+	  driver.findElementByXPath("//android.widget.ListView[@resource-id='list']/android.view.View[@index='0']").click();
+	  wait = new WebDriverWait(driver, 1000);
+	  //code for wait
+	  Thread.sleep(1000);
+	  driver.pressKeyCode(AndroidKeyCode.BACK);
+	  Thread.sleep(3000);
   }
  
 	//verificando os elementos
