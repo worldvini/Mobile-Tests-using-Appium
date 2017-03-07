@@ -14,11 +14,13 @@ Necessário para que o teste funcione ter o SDK Android para usar a tools **ADB 
 
 No linux necessário adicionar as variaveis do ADB e do APPIUM no $PATH global.
 
-No windown a instalação é feita apartir de .exe e o PATH e adicionado altomaticamente. 
+No windown a instalação é feita apartir de .exe e o PATH e adicionado automaticamente. 
 
 Qualquer duvida ler documentação [ Appium - Documentação ](http://appium.io/documentation.html?lang=pt) .
 
-#### Guia pratico para executar os testes
+
+## Guia pratico para executar os testes
+
 1- Altere o nome do device onde quer que o appium rode seus códigos.
 
 ```java
