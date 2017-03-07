@@ -20,6 +20,7 @@ Abrindo aplicativo pela primeira vez
 * Voltando a tela home agora estando logado
 * Clicando no botão QrCode, verificando se ele foi carregado e voltando a tela home.
 * Clicando no botão Mapa, verificando se ele foi carregado e voltando a tela home.
+
 ###### Obs²: Testes de Leitura de QrCode e Testes de GeoLocalização serão feitos manualmente, pois são funcionalidades nativas do android e não são contempladas via Appium.
 
 
