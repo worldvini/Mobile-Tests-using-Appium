@@ -1,9 +1,9 @@
 # Organização dos Testes aplicativo Uolet
 ======
 
-Os testes vão ser organizados em test cases com a IDE Eclipse, que serão executados pelo TestNg em uma ordem pré determinada.
+Os testes vão ser organizados em test cases com a IDE Eclipse, que serão executados pelo [ TestNg ](http://testng.org/doc/index.html) em uma ordem pré determinada.
 
-###### Obs: Em todos os casos de testes o driver do Appium (AndroidDriver) vão ser carregados no inicio da sua execução e finalizado antes de iniciar o próximo caso de teste.
+###### Obs: Em todos os casos de testes o driver do [ Appium ](http://appium.io/) **AndroidDriver** vão ser carregados no inicio da sua execução e finalizado antes de iniciar o próximo caso de teste.
 ======
 
 ## Suite de teste
