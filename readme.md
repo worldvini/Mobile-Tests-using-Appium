@@ -19,7 +19,7 @@ No windown a instalação é feita apartir de .exe e o PATH e adicionado altomat
 Qualquer duvida ler documentação [ Appium - Documentação ](http://appium.io/documentation.html?lang=pt) .
 
 #### Guia. Para rodar os testes
-1.Altere o nome do device onde quer que o appium rode seus códigos.
+1- Altere o nome do device onde quer que o appium rode seus códigos.
 
 ```java
 /*Setando meu device - Android Uolet*/
@@ -31,14 +31,16 @@ Para saber como saber qual o nome do seu device execute o comando **ADB DEVICES*
 ![adb devices](https://github.com/worldvini/Uolet-Mobile-Tests-using-Appium/img/runadbdvices.png "Verificando device conectado via adb devices")
 
 
-2. Inicie o Appium utilizando o comando **appium** no terminal.
+2- Inicie o Appium utilizando o comando **appium** no terminal.
+
+
 ![Iniciando Appium com Linux](https://github.com/worldvini/Uolet-Mobile-Tests-using-Appium/img/rumappium.png "Iniciando appium com linux") 
 
 
-3. Vá no case teste ou no xml de teste do testNG e selecione **Run As > Run TestNG Test**
+3- Vá no case teste ou no xml de teste do testNG e selecione **Run As > Run TestNG Test**
 
 
-4. Aguarde o fim do teste para obter relatório sobre sucesso e falhas.
+4- Aguarde o fim do teste para obter relatório sobre sucesso e falhas.
 
 ======
 
