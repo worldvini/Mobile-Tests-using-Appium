@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestMobile">
+	
+	<test name="UoletPrimeiraVerificacaoAplicativo">
+		<classes>
+			<class name="com.uolet.mobileApp.casosTeste.AbrindoAplicativoVerificandoFuncoes" />
+		</classes>
+	</test>
+	<test name="UoletVerificandoMenu">
+		<classes>
+			<class name="com.uolet.mobileApp.casosTeste.VerificandoItensDoMenu">
+					<methods>
+						<include name = "verificandoItemMinhaUoletEncaminhaParaCarteiraUolet" />
+					</methods>
+			 </class>
+		</classes>
+	</test>
+	
+</suite>

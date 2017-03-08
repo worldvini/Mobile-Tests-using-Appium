@@ -1,7 +1,6 @@
-package com.uolet.pageObjects.mobileApp;
+package com.uolet.mobileApp.pageObjects;
 
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 

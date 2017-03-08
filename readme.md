@@ -19,7 +19,7 @@ No windown a instalação é feita apartir de .exe e o PATH e adicionado automat
 Qualquer duvida ler documentação [ Appium - Documentação ](http://appium.io/documentation.html?lang=pt) .
 
 
-## Guia pratico para executar os testes
+# Guia pratico para executar os testes
 
 1- Altere o nome do device onde quer que o appium rode seus códigos.
 
@@ -100,7 +100,12 @@ Verificando Itens do Menu
 * Verificando se **Fale conosco** abre as configurações do Email do usuario
 * Verificando se **Termos de Uso** abre os termos de uso do aplicativo Uolet
 * Verificando se **Política de privacidade** abre os termos de uso do aplicativo Uolet
+* Verificando se **Minha Conta** abre a tela de alteração de dados do usuário
+* Verificando se o usuário realmente não pode alterar as informações se deixar o nome em branco
+* Verificando se o usuário realmente não pode alterar as informações se deixar o email em branco
+* Verificando se o usuário realmente tem as informações alteradas se tudo estiver preenchido corretamente
 * Botão Sair efetua o Logout do sistema
+
 
 
 #### TestCase 3 (em produção)

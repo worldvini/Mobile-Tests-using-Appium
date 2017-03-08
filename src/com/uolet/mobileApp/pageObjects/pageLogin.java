@@ -1,7 +1,6 @@
-package com.uolet.pageObjects.mobileApp;
+package com.uolet.mobileApp.pageObjects;
 
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
 
@@ -17,7 +16,6 @@ public class pageLogin {
 	  driver.findElementByXPath("//android.widget.EditText[@content-desc='Email']").sendKeys(Email);
 	  driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='2']/"
 	  		+ "android.view.View[@index='0']/android.view.View[@index='1']/android.widget.EditText[@index='0']").sendKeys(Senha);
-	  driver.findElementByXPath("//android.widget.Button[@content-desc='Entrar ']").click();
 	  driver.findElementByXPath("//android.widget.Button[@content-desc='Entrar ']").click();
 	  
 	  return new pageHome(driver);
