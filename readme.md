@@ -28,10 +28,10 @@ Qualquer duvida ler documentação [ Appium - Documentação ](http://appium.io/
 cap.setCapability(MobileCapabilityType.DEVICE_NAME, "LGH342c0e8e752"); 
 ```
 
-Para saber como saber qual o nome do seu device execute o comando **ADB DEVICES** no terminal.
+Para saber como descobrir qual o nome do seu device execute o comando **ADB DEVICES** no terminal.
 
 ```terminal
-[viniciusqa@UOLET testesMobileUolet]$ adb devices
+$ adb devices
 List of devices attached
 LGH342c0e8e752	no permissions;
 ```
@@ -44,7 +44,7 @@ LGH342c0e8e752	no permissions;
 
 
 ```terminal
-[viniciusqa@UOLET ~]$ appium
+$ appium
 [Appium] Welcome to Appium v1.6.3 (REV 40e40975ebd3593d08c3f83de2546258f9ddf11d)
 [Appium] Appium REST http interface listener started on 0.0.0.0:4723
 

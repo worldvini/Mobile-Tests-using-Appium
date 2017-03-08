@@ -6,15 +6,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
@@ -47,6 +51,30 @@ public class VerificandoItensDoMenu {
 	    fail(verificationErrorString);
 	    }
 	}
+	@BeforeMethod
+	public void AbrindoMenu () throws InterruptedException{
+		Dimension tamanhoTela = driver.manage().window().getSize();
+		int larguraTela = tamanhoTela.getWidth();
+		int alturaDoElemento = driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/"
+				+ "android.view.View[@index='0']/android.widget.Image[@index='0']").getLocation().getY();		
+		driver.swipe(5, alturaDoElemento, (larguraTela/10)*8, alturaDoElemento, 1000);		
+		Thread.sleep(2000);
+		wait = new WebDriverWait(driver, 1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Minha conta']")));
+		Thread.sleep(2000);
+	}
+	@AfterMethod
+	public void FechandoMenu() throws InterruptedException{
+		Dimension tamanhoTela = driver.manage().window().getSize();
+		int larguraTela = tamanhoTela.getWidth();
+		int alturaDoElemento = driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/"
+				+ "android.view.View[@index='0']/android.widget.Image[@index='0']").getLocation().getY();		
+		driver.swipe((larguraTela/10)*8, alturaDoElemento, 5, alturaDoElemento, 1000);		
+		Thread.sleep(2000);
+		wait = new WebDriverWait(driver, 1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@resource-id='iconQrCode']")));
+		Thread.sleep(2000);
+	}
   @Test(priority = 0, description = "Verificando Minha Uolet Vai realmente para a carteira")
   public void verificandoItemMinhaUoletEncaminhaParaCarteiraUolet() {
 	  
@@ -55,6 +83,7 @@ public class VerificandoItensDoMenu {
   public void verificandoMeusInteressesEntraTelaInteressesESelecionaOpções(){
 	  
   }
+  /*
   @Test(priority = 2, description = "Verificando convidar amigos abre as redes sociais do usuário")
   public void verificandoVerTutorialEntraTelaTutorialVisualizandoTutorial (){
 	  
@@ -90,5 +119,5 @@ public class VerificandoItensDoMenu {
   @Test(priority = 10, description = "verificando botão sair efetua logout sistema")
   public void verificandoBotaoSairEfetuaLogoutSistema(){
 	  
-  }
+  }*/
 }

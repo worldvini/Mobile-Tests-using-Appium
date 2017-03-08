@@ -41,8 +41,8 @@ public class AbrindoAplicativoVerificandoFuncoes {
 	}
 	
   @Test(priority =  0, description = "Abrindo aplicativo pela primeira vez e passando o tutorial")
-  public void AbrindoAplicativoEPassandoTutorial() throws MalformedURLException, InterruptedException {	   
-		com.uolet.mobileApp.funcoesDeInicializacaoTeste.logandoAplicativoUolet entrando = new com.uolet.mobileApp.funcoesDeInicializacaoTeste.logandoAplicativoUolet(driver);
+  public void AbrindoAplicativoEPassandoTutorial() throws MalformedURLException, InterruptedException {	
+	  	com.uolet.mobileApp.funcoesDeInicializacaoTeste.logandoAplicativoUolet entrando = new com.uolet.mobileApp.funcoesDeInicializacaoTeste.logandoAplicativoUolet(driver);
 		entrando.passandoTutorial();		
   }
   @Test(priority = 1, description = "Clicando em carteira sem login encaminhas pagina login")
