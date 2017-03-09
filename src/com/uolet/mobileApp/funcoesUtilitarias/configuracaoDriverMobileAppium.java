@@ -1,4 +1,4 @@
-package com.uolet.mobileApp.funcoesDeInicializacaoTeste;
+package com.uolet.mobileApp.funcoesUtilitarias;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -8,16 +8,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 
-public class criandoDriverConfigurandoCapability {
+public class configuracaoDriverMobileAppium {
 	AndroidDriver<WebElement> driver;
-	public criandoDriverConfigurandoCapability (AndroidDriver<WebElement> driverCriacao){
+	public configuracaoDriverMobileAppium (AndroidDriver<WebElement> driverCriacao){
 		this.driver = driverCriacao;
 	}
 	

@@ -76,79 +76,80 @@ Os testes vão ser organizados em test cases com a IDE Eclipse, que serão execu
 Abrindo aplicativo pela primeira vez
 
 * Aguardando aplicativo ser carregado
-* Passando tutorial e indo para tela home
-* Clicando em carteira na pagina home sem ter feito cadastro e sendo redirecionado para tela login
-* Efetuando login no contexto UOLET (via email)
-* Voltando a tela home agora estando logado
-* Clicando no botão QrCode, verificando se ele foi carregado e voltando a tela home.
-* Clicando no botão Mapa, verificando se ele foi carregado e voltando a tela home.
+* Passando 3 paginas de tutorial e indo para tela home
+* Clica em carteira na pagina home sem ter feito cadastro e deve ser redirecionado para tela login
+* Efetua login no contexto UOLET (via email)
+* Volta a tela home agora estando logado
+* Clica no botão QrCode, verifica se ele foi carregado e volta a tela home.
+* Clica no botão Mapa, verifica se ele foi carregado e volta a tela home.
+* Clica no botão Carteira, agora logado, verifica se foi carregada a tela Carteira Uolet e volta a tela home.
 
 ###### Obs²: Testes de Leitura de QrCode e Testes de GeoLocalização serão feitos manualmente, pois são funcionalidades nativas do android e não são contempladas via Appium.
 
 
 #### TestCase 2 (em produção)
 
-Verificando Itens do Menu
+Verifica Itens do Menu
 
 * Aguardando aplicativo ser carregado e logando com login Uolet
 * Clicando no Menu
-* Verificando se o nome do usuário Logado está sendo apresentado no menu.
-* Verificando se **Minha Uolet** vai para a tela carteira Uolet
-* Verificando se **Meus Interesses** vai para a tela meus interesses e se é possivel selecionar um e voltar a tela inicial
-* Verificando se **Convidar Amigos** abre as redes sociais do celular
-* Verificando se **Ver tutorial** abre o tutorial
-* Verificando se **Fale conosco** abre as configurações do Email do usuario
-* Verificando se **Termos de Uso** abre os termos de uso do aplicativo Uolet
-* Verificando se **Política de privacidade** abre os termos de uso do aplicativo Uolet
-* Verificando se **Minha Conta** abre a tela de alteração de dados do usuário
-* Verificando se o usuário realmente não pode alterar as informações se deixar o nome em branco
-* Verificando se o usuário realmente não pode alterar as informações se deixar o email em branco
-* Verificando se o usuário realmente tem as informações alteradas se tudo estiver preenchido corretamente
+* Verifica se o nome do usuário Logado está sendo apresentado no menu.
+* Verifica se **Minha Uolet** vai para a tela carteira Uolet
+* Verifica se **Meus Interesses** vai para a tela meus interesses e se é possivel selecionar um e voltar a tela inicial
+* Verifica se **Convidar Amigos** abre as redes sociais do celular
+* Verifica se **Ver tutorial** abre o tutorial
+* Verifica se **Fale conosco** abre as configurações do Email do usuario
+* Verifica se **Termos de Uso** abre os termos de uso do aplicativo Uolet
+* Verifica se **Política de privacidade** abre os termos de uso do aplicativo Uolet
+* Verifica se **Minha Conta** abre a tela de alteração de dados do usuário
+* Verifica se o usuário realmente não pode alterar as informações se deixar o nome em branco
+* Verifica se o usuário realmente não pode alterar as informações se deixar o email em branco
+* Verifica se o usuário realmente tem as informações alteradas se tudo estiver preenchido corretamente
 * Botão Sair efetua o Logout do sistema
 
 
 
 #### TestCase 3 (em produção)
 
-Verificando Campanha
+Verifica Tela Campanha
 
-* Aguardando aplicativo ser carregado e logando com login Uolet
-* Arrastando campanha para a direita e esquerda para testar a funcionalidad de *Visualização da campanha*
-* Clicando em uma campanha
-* Arrastando os itens para direita e esquerda para testar a funcionalidade de *Visualização da campanha*
-* Verificando a ordem dos itens
-* Verificando as informações dos itens e fotos dele
-* Verificando se o link do item funciona e volta para o item
-* Verificando se o video do item funciona e volta para o item
-* Verificando se o item é coletado e exibe mensagem de coleta
+* Aguarda aplicativo ser carregado e logando com login Uolet
+* Arrasta campanha para a direita e esquerda para testar a funcionalidad de *Visualização da campanha*
+* Clica em uma campanha
+* Arrasta os itens para direita e esquerda para testar a funcionalidade de *Visualização da campanha*
+* Verifica a ordem dos itens
+* Verifica as informações dos itens e fotos dele
+* Verifica se o link do item funciona e volta para o item
+* Verifica se o video do item funciona e volta para o item
+* Verifica se o item é coletado e exibe mensagem de coleta
 
 
 #### TestCase 4 (em produção)
 
-Verificando Carteira Uolet
+Verifica Tela Carteira Uolet
 
-* Aguardando aplicativo ser carregado e logando com login Uolet
-* Clicando na carteira e verificando se ela foi carregada
-* Verificando se a carteira tem 3 abas, **Disponível**, **Resgatados** e **Vencidos**
-* Verificando se na aba **Disponível** está o item coletado no **TestCase 3**
-* Verificando se o item coletado é o mesmo item 
-* Verificando se ao arrastar o item para a esquerda é exibido o botão deletar
-* Verificando se o botão deletar realmente deleta o item
-* Verificando se um cupom pode ser resgatado
+* Aguarda aplicativo ser carregado e logando com login Uolet
+* Clica na carteira e verificando se ela foi carregada
+* Verifica se a carteira tem 3 abas, **Disponível**, **Resgatados** e **Vencidos**
+* Verifica se na aba **Disponível** está o item coletado no **TestCase 3**
+* Verifica se o item coletado é o mesmo item 
+* Verifica se ao arrastar o item para a esquerda é exibido o botão deletar
+* Verifica se o botão deletar realmente deleta o item
+* Verifica se um cupom pode ser resgatado
 
 
 #### TestCase 5 (em produção)
 
-Verificando Login
+Verifica Tela Login
 
-* Aguardando aplicativo a ser carregado e indo para tela login
-* Logando via facebook usuário existente
-* Logando via facebook usuário inválido
-* Loganco via google usuário existente
-* Logando via google usuário inválido
-* Logando via Uolet usuário novo
-* Logando via Uolet usuário existente senha correta
-* Logando via Uolet usuário existente senha inválida
+* Aguarda aplicativo a ser carregado e indo para tela login
+* Loga via facebook usuário existente
+* Loga via facebook usuário inválido
+* Loga via google usuário existente
+* Loga via google usuário inválido
+* Loga via Uolet usuário novo
+* Loga via Uolet usuário existente senha correta
+* Loga via Uolet usuário existente senha inválida
 
 
 
