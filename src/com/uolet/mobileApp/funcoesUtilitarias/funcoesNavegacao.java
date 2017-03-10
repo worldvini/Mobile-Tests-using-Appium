@@ -38,26 +38,40 @@ public class funcoesNavegacao {
 	public void abreMenu () {
 		tamanhoTelaDispositivo = driver.manage().window().getSize();
 		int larguraTela = tamanhoTelaDispositivo.getWidth();
-		int alturaElemento = alturaElemento("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/android.view.View[@index='0']/android.widget.Image[@index='0']");
-		//int alturaDoElemento = driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/"
-		//		+ "android.view.View[@index='0']/android.widget.Image[@index='0']").getLocation().getY();		
+		int alturaElemento = alturaElemento("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/android.view.View[@index='0']/android.widget.Image[@index='0']");		
 		driver.swipe(5, alturaElemento, (larguraTela/10)*8, alturaElemento, 1000);
 	}
 	public void fechaeMenu (){
 		tamanhoTelaDispositivo = driver.manage().window().getSize();
 		int larguraTela = tamanhoTelaDispositivo.getWidth();
-		int alturaElemento = alturaElemento("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/android.view.View[@index='0']/android.widget.Image[@index='0']");
-		//int alturaDoElemento = driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/"
-		//		+ "android.view.View[@index='0']/android.widget.Image[@index='0']").getLocation().getY();		
+		int alturaElemento = alturaElemento("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='0']/android.view.View[@index='0']/android.widget.Image[@index='0']");		
 		driver.swipe((larguraTela/10)*8, alturaElemento, 5, alturaElemento, 1000);
 	}
-	public void clicaBotaoVoltarSuperiorEsquerdo(){
-		 driver.tap(1, 40, 70, 1);
+	public void clicaBotaoSuperiorOrInferiorEsquerdo(String posicaoBotao){
+		tamanhoTelaDispositivo = driver.manage().window().getSize();
+		int larguraTela10Porcento = tamanhoTelaDispositivo.getWidth()/10;
+		int alturaTela = tamanhoTelaDispositivo.getHeight();
+		if(posicaoBotao == "superior")
+			driver.tap(1, larguraTela10Porcento, (alturaTela/100)*8, 1);
+		else
+			driver.tap(1, larguraTela10Porcento, (alturaTela/100)*95, 1);
+
+		System.out.println("altura da tela: " + alturaTela + " -tentativa de conta: " + (alturaTela/100)*98);
 	}
 	public void localizaPosicaoItemMenuEClica (String nomeElemento){
 		tamanhoTelaDispositivo = driver.manage().window().getSize();
 		int larguraTela = tamanhoTelaDispositivo.getWidth();
+		int alturaElemento = alturaElemento(nomeElemento);		
+		driver.tap(1, larguraTela/4, alturaElemento, 1);		
+	}
+	/* o -3 na altura do elemento é uma soluçao provisória, até o programador resolver um problema no click do elemento*/
+	public void solucaoMomentaneaFaleConosco (String nomeElemento, String CacheSair){
+		tamanhoTelaDispositivo = driver.manage().window().getSize();
+		int larguraTela = tamanhoTelaDispositivo.getWidth();
 		int alturaElemento = alturaElemento(nomeElemento);
-		driver.tap(1, larguraTela/2, alturaElemento, 1);		
+		if(CacheSair == "FaleConosco")
+			driver.tap(1, larguraTela/4, alturaElemento -10, 1);
+		else
+			driver.tap(1, larguraTela/4, alturaElemento +15, 1);
 	}
 }

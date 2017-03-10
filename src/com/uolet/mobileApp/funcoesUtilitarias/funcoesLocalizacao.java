@@ -38,7 +38,7 @@ public class funcoesLocalizacao {
 		Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='Radar de Ofertas']")));
 	}
 	public void confirmaTelaMenu () {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Minha conta']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Minha Uolet']")));
 		Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='Minha Uolet']")));
 	}
 	public void confirmaTelaAlteracoesDados (){
@@ -51,6 +51,19 @@ public class funcoesLocalizacao {
 	public void confirmaTelaCampanha (){
 		
 	}
+	public void confirmaTelaTermosUso (){
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@text='https://uolet.com/termos-de-uso/']")));
+		Assert.assertTrue(isElementPresent(By.xpath("//android.widget.EditText[@text='https://uolet.com/termos-de-uso/']")));
+	}
+	public void confirmaTelaPoliticaPrivacidade (){
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@text='https://uolet.com/politica-de-privacidade/']")));
+		Assert.assertTrue(isElementPresent(By.xpath("//android.widget.EditText[@text='https://uolet.com/politica-de-privacidade/']")));
+	}
+	public void confirmaAlertaAndroidInvocado (){
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@resource-id='android:id/alertTitle']")));
+		Assert.assertTrue(isElementPresent(By.xpath("//android.widget.TextView[@resource-id='android:id/alertTitle']")));
+	}
+	
 	//fazendo a funcao isElementPresent retornar um valor true ou false
 	private boolean isElementPresent(By by) {
     try {

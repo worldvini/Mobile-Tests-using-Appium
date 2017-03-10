@@ -73,7 +73,7 @@ public class AbrindoAplicativoVerificandoFuncoes {
   public void ClicandoEmCarteiraSemEstarLogadoAbrirTelaCarteiraUolet() throws InterruptedException{
 	 navegar.clicaCarteiraUoletTelaHome();
 	 localizacao.confirmaTelaCarteira();
-	 navegar.clicaBotaoVoltarSuperiorEsquerdo();
+	 navegar.clicaBotaoSuperiorOrInferiorEsquerdo("superior");
 	 localizacao.confirmaTelaInicial();
   }
 }
