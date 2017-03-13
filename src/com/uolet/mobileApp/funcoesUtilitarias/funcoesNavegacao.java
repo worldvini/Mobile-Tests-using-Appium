@@ -51,12 +51,13 @@ public class funcoesNavegacao {
 		tamanhoTelaDispositivo = driver.manage().window().getSize();
 		int larguraTela10Porcento = tamanhoTelaDispositivo.getWidth()/10;
 		int alturaTela = tamanhoTelaDispositivo.getHeight();
-		if(posicaoBotao == "superior")
-			driver.tap(1, larguraTela10Porcento, (alturaTela/100)*8, 1);
-		else
-			driver.tap(1, larguraTela10Porcento, (alturaTela/100)*95, 1);
-
-		System.out.println("altura da tela: " + alturaTela + " -tentativa de conta: " + (alturaTela/100)*98);
+		if(posicaoBotao == "superior"){
+			driver.tap(1, larguraTela10Porcento, (alturaTela*8)/100 , 1);
+			System.out.println("altura totla da tela: " + alturaTela + " altura do click do botão superior em pixels: " + (alturaTela*8)/100 );
+		}else{
+			driver.tap(1, larguraTela10Porcento, (alturaTela*98)/100, 1);
+			System.out.println("altura total da tela: " + alturaTela + " altura do click do botão inferior em pixels: " + (alturaTela*98)/100 );
+		}		
 	}
 	public void localizaPosicaoItemMenuEClica (String nomeElemento){
 		tamanhoTelaDispositivo = driver.manage().window().getSize();
@@ -64,14 +65,26 @@ public class funcoesNavegacao {
 		int alturaElemento = alturaElemento(nomeElemento);		
 		driver.tap(1, larguraTela/4, alturaElemento, 1);		
 	}
+	public void rolarTelaCimaBaixo(String direcao){
+		tamanhoTelaDispositivo = driver.manage().window().getSize();
+		int meioLarguraTela = tamanhoTelaDispositivo.getWidth()/2;
+		int alturaTela = tamanhoTelaDispositivo.getHeight()/2;
+		if(direcao == "cima"){
+			driver.swipe(meioLarguraTela, alturaTela/2, meioLarguraTela, alturaTela, 1000);
+		}else{
+			driver.swipe(meioLarguraTela, alturaTela/2, meioLarguraTela, 10, 1000);
+		}
+	}
 	/* o -3 na altura do elemento é uma soluçao provisória, até o programador resolver um problema no click do elemento*/
 	public void solucaoMomentaneaFaleConosco (String nomeElemento, String CacheSair){
 		tamanhoTelaDispositivo = driver.manage().window().getSize();
 		int larguraTela = tamanhoTelaDispositivo.getWidth();
 		int alturaElemento = alturaElemento(nomeElemento);
-		if(CacheSair == "FaleConosco")
+		if(CacheSair == "FaleConosco"){
 			driver.tap(1, larguraTela/4, alturaElemento -10, 1);
-		else
-			driver.tap(1, larguraTela/4, alturaElemento +15, 1);
+		}else if(CacheSair == "minhaconta"){
+			driver.tap(1,  larguraTela/3, alturaElemento +10, 1);
+		}
+		
 	}
 }

@@ -9,12 +9,14 @@
 	<test name="UoletVerificandoMenu">
 		<classes>
 			<class name="com.uolet.mobileApp.casosTeste.VerificandoItensDoMenu">
+			<!-- 
 					<methods>
 						<include name = "verificandoItemMinhaUoletEncaminhaParaCarteiraUolet" />
-						<!-- 						
+												
 							<include name ="verificandoMeusInteressesEntraTelaInteressesESelecionaOpções" />
-						 -->
+						
 					</methods>
+					 -->
 			 </class>
 		</classes>
 	</test>

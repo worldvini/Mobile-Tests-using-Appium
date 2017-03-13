@@ -42,7 +42,8 @@ public class funcoesLocalizacao {
 		Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='Minha Uolet']")));
 	}
 	public void confirmaTelaAlteracoesDados (){
-		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Editar minha conta']")));
+		Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='Editar minha conta']")));
 	}
 	public void confirmaTelaMeusInteresses (){
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Selecione seus interesses:']")));

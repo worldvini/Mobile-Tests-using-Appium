@@ -71,7 +71,7 @@ Os testes vão ser organizados em test cases com a IDE Eclipse, que serão execu
 ## Suite de teste
 ======
 
-#### TestCase 1 (completo)
+#### TestCase 1 (finalizado)
 
 Abrindo aplicativo pela primeira vez
 
@@ -87,21 +87,27 @@ Abrindo aplicativo pela primeira vez
 ###### Obs²: Testes de Leitura de QrCode e Testes de GeoLocalização serão feitos manualmente, pois são funcionalidades nativas do android e não são contempladas via Appium.
 
 
-#### TestCase 2 (em produção)
+#### TestCase 2 (finalizado)
 
 Verifica Itens do Menu
 
-* Aguardando aplicativo ser carregado e logando com login Uolet
+* Aguardando aplicativo ser carregado
 * Clicando no Menu
-* Verifica se o nome do usuário Logado está sendo apresentado no menu.
-* Verifica se **Minha Uolet** vai para a tela carteira Uolet
-* Verifica se **Meus Interesses** vai para a tela meus interesses e se é possivel selecionar um e voltar a tela inicial
 * Verifica se **Convidar Amigos** abre as redes sociais do celular
 * Verifica se **Ver tutorial** abre o tutorial
 * Verifica se **Fale conosco** abre as configurações do Email do usuario
 * Verifica se **Termos de Uso** abre os termos de uso do aplicativo Uolet
 * Verifica se **Política de privacidade** abre os termos de uso do aplicativo Uolet
-* Verifica se **Minha Conta** abre a tela de alteração de dados do usuário
+* Verifica se **Limpar Cache** funcionalidade cancelar funciona
+* Verifica se **Limpar Cache** funcionalidade excluir funciona
+* Verifica se quando deslogado o **Minha Uolet** vai para a tela login
+* Verifica se quando deslogado o **Criar Conta** vai para a tela login
+* Verifica se quando deslogado o **Meus Interesses** vai para a tela login
+* Logando Uolet
+* Verifica se quando logado **Minha Uolet** vai para a tela carteira Uolet
+* Verifica se quando logado **Meus Interesses** vai para a tela meus interesses e se é possivel selecionar um e voltar a tela inicial
+* Verifica se o nome do usuário Logado está sendo apresentado no menu.
+* Verifica se quando logado **Minha Conta** abre a tela de alteração de dados do usuário
 * Verifica se o usuário realmente não pode alterar as informações se deixar o nome em branco
 * Verifica se o usuário realmente não pode alterar as informações se deixar o email em branco
 * Verifica se o usuário realmente tem as informações alteradas se tudo estiver preenchido corretamente

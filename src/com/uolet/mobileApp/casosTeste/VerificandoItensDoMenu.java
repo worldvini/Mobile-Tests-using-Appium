@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -61,7 +62,7 @@ public class VerificandoItensDoMenu {
 	  localizacao.confirmaTelaInicial();
   }
   @Test(priority = 2, description = "verifica fale conosco abre um email padrão do usuário")
-  public void verificandoFaleConoscoAbreEmailPadrãoUsuário (){
+  public void verificaFaleConoscoAbreEmailPadrãoUsuário (){
 	  navegar.abreMenu();
 	  localizacao.confirmaTelaMenu();
 	  navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Fale conosco']", "FaleConosco");
@@ -72,7 +73,7 @@ public class VerificandoItensDoMenu {
 	  localizacao.confirmaTelaInicial();
   }
   @Test(priority = 3, description = "verifica termos de uso abre os termos de uso do aplicativo uolet")
-  public void verificandoTermosDeUsoEntraEmDocumentacaoTermosDeUsoUolet (){
+  public void verificaTermosDeUsoEntraEmDocumentacaoTermosDeUsoUolet (){
 	  navegar.abreMenu();
 	  localizacao.confirmaTelaMenu();
 	  navegar.localizaPosicaoItemMenuEClica("//android.view.View[@content-desc='Termos de Uso']");
@@ -83,7 +84,7 @@ public class VerificandoItensDoMenu {
 	  localizacao.confirmaTelaInicial();	  
   }
   @Test(priority = 4, description = "verifica politica de privacidade abre os termos de uso do aplicativo uolet")
-  public void verificandoPoliticaPrivacidadeEntraEmDocumentacaoPoliticaPrivacidadeUolet (){
+  public void verificaPoliticaPrivacidadeEntraEmDocumentacaoPoliticaPrivacidadeUolet (){
 	  navegar.abreMenu();
 	  localizacao.confirmaTelaMenu();
 	  navegar.localizaPosicaoItemMenuEClica("//android.view.View[@content-desc='Política de privacidade']");
@@ -97,20 +98,22 @@ public class VerificandoItensDoMenu {
   public void verificaLimparCacheCancelar() throws InterruptedException{
 	  navegar.abreMenu();
 	  localizacao.confirmaTelaMenu();
-	  navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Limpar Cache']","Cache");
-  Thread.sleep(2000);
-  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='LIMPAR CACHE']")));
-  driver.findElementByXPath("//android.widget.Button[@content-desc='Cancelar ']").click();
+	  navegar.clicaBotaoSuperiorOrInferiorEsquerdo("inferior");
+	  //navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Limpar Cache']","Cache");
+	  Thread.sleep(2000);
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='LIMPAR CACHE']")));
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Cancelar ']").click();
 	  localizacao.confirmaTelaInicial();	  
   }
   @Test(priority = 6, description = "verifica se o botão limpar cache funcionalidade excluir funciona")
   public void verificaLimparCacheExcluir() throws InterruptedException{
 	  navegar.abreMenu();
 	  localizacao.confirmaTelaMenu();
-	  navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Limpar Cache']","Cache");
-  Thread.sleep(2000);
-  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='LIMPAR CACHE']")));
-  driver.findElementByXPath("//android.widget.Button[@content-desc='Excluir ']").click();
+	  navegar.clicaBotaoSuperiorOrInferiorEsquerdo("inferior");
+	  //navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Limpar Cache']","Cache");
+	  Thread.sleep(2000);
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='LIMPAR CACHE']")));
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Excluir ']").click();
 	  localizacao.confirmaTelaInicial();	  
   }
 	@Test(priority = 7 , description ="verifica minha uolet deslogado encaminha tela login")
@@ -176,23 +179,115 @@ public class VerificandoItensDoMenu {
 	  driver.findElementByXPath("//android.widget.Button[@content-desc='OK ']").click();
 	  localizacao.confirmaTelaInicial();	  
   }
-  @Test(priority = 7, description = "verifica botão minha conta vai para minha conta")
+  @Test(priority = 13, description = "verifica se o usuário realmente foi logado como rafael")
+  public void verificaUsuarioEstaLogado (){
+	  navegar.abreMenu();
+	  localizacao.confirmaTelaMenu();
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='rafael']")));
+	  navegar.fechaeMenu();
+	  localizacao.confirmaTelaInicial();
+  }
+  @Test(priority = 14, description = "verifica botão minha conta vai para minha conta")
   public void verificandoBotaoMinhaContaEntraTelaDeAlteracaoDeDadosUsuario (){
-	  
+	  navegar.abreMenu();
+	  localizacao.confirmaTelaMenu();
+	  navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Minha conta']", "minhaconta");
+	  //navegar.localizaPosicaoItemMenuEClica("//android.view.View[@content-desc='Minha conta']");
+	  localizacao.confirmaTelaAlteracoesDados();	
+	  navegar.clicaBotaoSuperiorOrInferiorEsquerdo("superior");
+	  localizacao.confirmaTelaInicial();
   }
-  @Test(priority = 8, description = "verifica se as informações do usário podem ser alteradas com nome de usuário em branco")
-  public void verificandoInformacoesUsuarioNaoDevemSerAlteradasComNomeEmBranco (){
-	  
+  @Test(priority = 15, description = "verifica se as informações do usário podem ser alteradas com nome de usuário em branco")
+  public void verificandoInformacoesUsuarioNaoDevemSerAlteradasComNomeEmBranco () throws InterruptedException{
+	  navegar.abreMenu();
+	  localizacao.confirmaTelaMenu();
+	  navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Minha conta']", "minhaconta");
+	  localizacao.confirmaTelaAlteracoesDados();
+	  driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='1']"
+		  		+ "/android.view.View[@index='2']/android.widget.EditText[@index='0']").clear();
+	  Thread.sleep(1500);
+	  driver.pressKeyCode(AndroidKeyCode.BACK);
+	  navegar.rolarTelaCimaBaixo("baixo");
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Confirmar ']").click();
+	  Thread.sleep(1500);
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='DADOS INVÁLIDOS']")));
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Ok ']").click();
+	  localizacao.confirmaTelaAlteracoesDados();
+	  driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='1']"
+		  		+ "/android.view.View[@index='2']/android.widget.EditText[@index='0']").sendKeys("rafa@ateste.com");
+	  Thread.sleep(1500);
+	  driver.pressKeyCode(AndroidKeyCode.BACK);
+	  navegar.rolarTelaCimaBaixo("baixo");
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Confirmar ']").click();
+	  Thread.sleep(1500);	
+	  wait = new WebDriverWait(driver, 1000);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Dados atualizados com sucesso.']")));
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='Dados atualizados com sucesso.']")));
+	  navegar.rolarTelaCimaBaixo("cima");
+	  navegar.rolarTelaCimaBaixo("cima");
+	  navegar.clicaBotaoSuperiorOrInferiorEsquerdo("superior");
+	  localizacao.confirmaTelaInicial();
   }
-  @Test(priority = 9, description = "verifica se as informações do usuário podem ser alteradas com email de usuário em branco")
-  public void verificandoInformacoesUsuarioNaoDevemSerAlteradasComEmailEmBranco (){
-	  
+  @Test(priority = 16, description = "verifica se as informações do usuário podem ser alteradas com email de usuário em branco")
+  public void verificandoInformacoesUsuarioNaoDevemSerAlteradasComEmailEmBranco () throws InterruptedException{
+	  navegar.abreMenu();
+	  localizacao.confirmaTelaMenu();
+	  navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Minha conta']", "minhaconta");
+	  localizacao.confirmaTelaAlteracoesDados();
+	  driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='1']"
+		  		+ "/android.view.View[@index='4']/android.widget.EditText[@index='0']").clear();
+	  Thread.sleep(1500);
+	  driver.pressKeyCode(AndroidKeyCode.BACK);
+	  navegar.rolarTelaCimaBaixo("baixo");
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Confirmar ']").click();
+	  Thread.sleep(1500);
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='DADOS INVÁLIDOS']")));
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Ok ']").click();
+	  localizacao.confirmaTelaAlteracoesDados();
+	  driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='1']"
+		  		+ "/android.view.View[@index='4']/android.widget.EditText[@index='0']").sendKeys("rafael silva");
+	  Thread.sleep(1500);
+	  driver.pressKeyCode(AndroidKeyCode.BACK);
+	  navegar.rolarTelaCimaBaixo("baixo");
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Confirmar ']").click();
+	  Thread.sleep(1500);	
+	  wait = new WebDriverWait(driver, 1000);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Dados atualizados com sucesso.']")));
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='Dados atualizados com sucesso.']")));
+	  navegar.rolarTelaCimaBaixo("cima");
+	  navegar.rolarTelaCimaBaixo("cima");
+	  navegar.clicaBotaoSuperiorOrInferiorEsquerdo("superior");
+	  localizacao.confirmaTelaInicial();	  
   }
-  @Test(priority = 10, description = "verifica se as informações de usuário são alteradas")
-  public void verificandoInformacoesUsuarioSaoAlteradas (){
-	  
+  @Test(priority = 17, description = "verifica se as informações de usuário são alteradas")
+  public void verificandoInformacoesUsuarioSaoAlteradas () throws InterruptedException{
+	  navegar.abreMenu();
+	  localizacao.confirmaTelaMenu();
+	  navegar.solucaoMomentaneaFaleConosco("//android.view.View[@content-desc='Minha conta']", "minhaconta");
+	  localizacao.confirmaTelaAlteracoesDados();
+	  driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='1']"
+		  		+ "/android.view.View[@index='4']/android.widget.EditText[@index='0']").clear();
+	  driver.findElementByXPath("//android.webkit.WebView[@content-desc='uolet-mobile']/android.view.View[@index='1']"
+		  		+ "/android.view.View[@index='4']/android.widget.EditText[@index='0']").sendKeys("rafael");
+	  Thread.sleep(1500);
+	  driver.pressKeyCode(AndroidKeyCode.BACK);
+	  navegar.rolarTelaCimaBaixo("baixo");
+	  driver.findElementByXPath("//android.widget.Button[@content-desc='Confirmar ']").click();
+	  Thread.sleep(1500);	
+	  wait = new WebDriverWait(driver, 1000);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc='Dados atualizados com sucesso.']")));
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='Dados atualizados com sucesso.']")));
+	  navegar.rolarTelaCimaBaixo("cima");
+	  navegar.rolarTelaCimaBaixo("cima");
+	  navegar.clicaBotaoSuperiorOrInferiorEsquerdo("superior");
+	  localizacao.confirmaTelaInicial();	
+	  navegar.abreMenu();
+	  localizacao.confirmaTelaMenu();
+	  Assert.assertTrue(isElementPresent(By.xpath("//android.view.View[@content-desc='rafael']")));
+	  navegar.fechaeMenu();
+	  localizacao.confirmaTelaInicial();
   }
-  @Test(priority = 13, description = "verifica botão sair efetua logout sistema")
+  @Test(priority = 18, description = "verifica botão sair efetua logout sistema")
   public void verificandoBotaoSairEfetuaLogoutSistema(){
 	  navegar.abreMenu();
 	  localizacao.confirmaTelaMenu();
