@@ -3,6 +3,7 @@ package com.uolet.mobileApp.casosTeste;
 import static org.testng.Assert.fail;
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -28,7 +29,8 @@ public class VerificandoItensDoMenu {
 	@BeforeClass
 	public void Setup() throws MalformedURLException, InterruptedException {
 		com.uolet.mobileApp.funcoesUtilitarias.configuracaoDriverMobileAppium configuracao = new com.uolet.mobileApp.funcoesUtilitarias.configuracaoDriverMobileAppium(driver);
-		driver = configuracao.CriandoDriver();		
+		driver = configuracao.CriandoDriver();	
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		localizacao = new com.uolet.mobileApp.funcoesUtilitarias.funcoesLocalizacao(driver);
 		navegar = new com.uolet.mobileApp.funcoesUtilitarias.funcoesNavegacao(driver);	  	
 		navegar.passaTutorial();

@@ -32,7 +32,8 @@ public class configuracaoDriverMobileAppium {
 		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 		
 		/*Setando meu device - Android Uolet*/
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "LGH342c0e8e752"); 
+		//cap.setCapability(MobileCapabilityType.DEVICE_NAME, "LGH342c0e8e752"); 
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "T099707JJF"); 
 		
 		/*Instalar o APK apartir de um endereço fisico*/
 		//cap.setCapability(MobileCapabilityType.APP, arquivoAplicacao.getAbsolutePath());
